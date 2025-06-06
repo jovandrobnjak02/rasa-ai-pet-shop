@@ -1,0 +1,54 @@
+<div class="cart-container">
+  <h2>Shopping Cart</h2>
+  
+  <div class="cart-items" *ngIf="cartItems.length > 0">
+    <div class="cart-item" *ngFor="let item of cartItems">
+      <div class="item-details">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+        <p>Type: {{ item.type }}</p>
+        <p>Price: ${{ item.price }}</p>
+        
+        <div class="order-status" *ngIf="item.orderStatus">
+          <p>Status: 
+            <span [class]="'status-' + item.orderStatus.toLowerCase()">
+              {{ item.orderStatus }}
+            </span>
+          </p>
+        </div>
+
+        <div class="rating-section" *ngIf="item.orderStatus === 'completed'">
+          <div class="rating">
+            <span *ngFor="let star of [1,2,3,4,5]" 
+                  (click)="rateItem(item, star)"
+                  [class.active]="(item.userRating || 0) >= star">
+              ★
+            </span>
+          </div>
+          <p *ngIf="item.userRating">Your rating: {{ item.userRating }}/5</p>
+        </div>
+
+        <div class="item-actions">
+          <button *ngIf="item.orderStatus === 'in progress' || item.orderStatus === 'cancelled'"
+                  (click)="updateOrder(item)">
+            Update Order
+          </button>
+          <button (click)="removeFromCart(item)">
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-summary">
+      <h3>Total: ${{ totalPrice }}</h3>
+      <button (click)="checkout()" *ngIf="!isLoggedIn">Login to Checkout</button>
+      <button (click)="checkout()" *ngIf="isLoggedIn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <div class="empty-cart" *ngIf="cartItems.length === 0">
+    <p>Your cart is empty</p>
+    <a routerLink="/">Continue Shopping</a>
+  </div>
+</div>

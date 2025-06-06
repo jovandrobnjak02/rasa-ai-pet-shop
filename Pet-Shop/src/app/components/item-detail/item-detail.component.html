@@ -1,0 +1,24 @@
+<div *ngIf="item" class="item-detail-container">
+  <img [src]="'assets/images/' + item.image" alt="{{ item.name }}" class="item-image">
+  <div class="item-details">
+    <h2>{{ item.name }}</h2>
+    <p>Type: {{ item.type }}</p>
+    <p>Size: {{ item.size }}</p>
+    <p>Manufacturer: {{ item.manufacturer }}</p>
+    <p>Product Date: {{ item.productDate | date }}</p>
+    <p>Price: {{ item.price | currency }}</p>
+    <button (click)="reserve()">Reserve</button>
+
+    <div class="reviews">
+      <h3>Reviews</h3>
+      <div *ngFor="let review of item?.reviews">
+        <p>{{ review }}</p>
+      </div>
+      <textarea [(ngModel)]="newReview" placeholder="Write a review"></textarea>
+      <button (click)="addReview()">Add Review</button>
+    </div>
+  </div>
+</div>
+<div *ngIf="!item">
+  <p>Item not found!</p>
+</div>

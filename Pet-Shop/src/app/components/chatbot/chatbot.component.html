@@ -1,0 +1,35 @@
+<div class="chatbot-container" [class.open]="open">
+  <!-- Chat Button -->
+  <button class="chat-button" (click)="toggle()">
+    <i class="fas fa-comments"></i>
+  </button>
+
+  <!-- Chat Window -->
+  <div class="chat-window" *ngIf="open">
+    <div class="chat-header">
+      <h3>Pet Shop Assistant</h3>
+      <button class="close-button" (click)="toggle()">×</button>
+    </div>
+
+    <div class="messages-container">
+      <div *ngFor="let message of messages" 
+           class="message" 
+           [class.user-message]="message.from === 'user'"
+           [class.bot-message]="message.from === 'bot'">
+        <div class="message-content">
+          {{ message.text }}
+        </div>
+      </div>
+    </div>
+
+    <div class="input-container">
+      <input type="text" 
+             [(ngModel)]="input" 
+             (keyup.enter)="send()"
+             placeholder="Type your message...">
+      <button (click)="send()">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+</div> 

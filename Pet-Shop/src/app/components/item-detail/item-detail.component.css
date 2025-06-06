@@ -1,0 +1,70 @@
+.item-detail-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.item-image {
+  max-width: 300px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-details h2 {
+  margin-bottom: 10px;
+}
+
+.item-details p {
+  margin-bottom: 5px;
+}
+
+.item-details button {
+  margin-top: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.item-details button:hover {
+  background-color: black;
+}
+
+.reviews {
+  margin-top: 20px;
+}
+
+.reviews h3 {
+  margin-bottom: 10px;
+}
+
+.reviews textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.reviews button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.reviews button:hover {
+  background-color: black;
+}

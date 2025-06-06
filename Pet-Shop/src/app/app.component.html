@@ -1,0 +1,26 @@
+<header class="main-header">
+  <div class="header-content">
+    <div class="nav-brand">
+      <h1>Jungle Book Pet Shop</h1>
+    </div>
+    <nav class="nav-links">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a routerLink="/cart" routerLinkActive="active">Cart</a>
+      <ng-container *ngIf="!isLoggedIn">
+        <a routerLink="/login" routerLinkActive="active">Login</a>
+        <a routerLink="/register" routerLinkActive="active">Register</a>
+      </ng-container>
+      <ng-container *ngIf="isLoggedIn">
+        <a routerLink="/profile" routerLinkActive="active">Profile</a>
+        <a (click)="logout()" class="logout-btn">Logout</a>
+      </ng-container>
+    </nav>
+  </div>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<footer>
+  <p>&copy; 2024 Jungle Book Pet Shop. All rights reserved.</p>
+</footer>
+<app-chatbot></app-chatbot>
