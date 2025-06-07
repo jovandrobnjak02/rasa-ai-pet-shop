@@ -8,9 +8,24 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
-  - ask_products
-  - ask_price
-  - ask_availability
+  - ask_pet_type
+  - ask_pet_price
+
+slots:
+  pet_type:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: pet_type
+  pet_name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: pet_name
+
+entities:
+  - pet_type
+  - pet_name
 
 responses:
   utter_greet:
@@ -32,14 +47,29 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
-  utter_ask_products:
-  - text: "We have a variety of pet products including food, toys, and accessories. What are you looking for?"
+  utter_ask_pet_type:
+  - text: "We have several types of pets available:\n- Fish (Goldfish, Koi Fish)\n- Birds (Ara Parrot, Canary)\n- Dogs (Labrador Retriever, Scottish Collie)\n- Cats (Persian Cat)\n- Exotic pets (African Hedgehog, Greek Tortoise)\n- Rodents (Mini Rex Rabbit)\nWhat type are you interested in?"
 
-  utter_ask_price:
-  - text: "The price of {product} is {price}."
+  utter_ask_pet_type_fish:
+  - text: "We have Goldfish ($15) and Koi Fish ($50) available."
 
-  utter_ask_availability:
-  - text: "Yes, {product} is currently in stock."
+  utter_ask_pet_type_birds:
+  - text: "We have Ara Parrot ($1050) and Canary ($40) available."
+
+  utter_ask_pet_type_dogs:
+  - text: "We have Labrador Retriever ($600) and Scottish Collie ($700) available."
+
+  utter_ask_pet_type_cats:
+  - text: "We have Persian Cat ($400) available."
+
+  utter_ask_pet_type_exotic:
+  - text: "We have African Hedgehog ($125) and Greek Tortoise ($400) available."
+
+  utter_ask_pet_type_rodents:
+  - text: "We have Mini Rex Rabbit ($75) available."
+
+  utter_ask_pet_price:
+  - text: "Here are our pet prices:\n- Goldfish: $15\n- Koi Fish: $50\n- Ara Parrot: $1050\n- Canary: $40\n- Labrador Retriever: $600\n- Scottish Collie: $700\n- Persian Cat: $400\n- African Hedgehog: $125\n- Greek Tortoise: $400\n- Mini Rex Rabbit: $75"
 
 session_config:
   session_expiration_time: 60

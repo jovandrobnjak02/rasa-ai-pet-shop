@@ -2,29 +2,64 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+- story: pet type path
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - intent: ask_pet_type
+  - action: utter_ask_pet_type
 
-- story: sad path 1
+- story: specific pet type path - fish
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - intent: ask_pet_type
+    entities:
+    - pet_type: fish
+  - action: utter_ask_pet_type_fish
 
-- story: sad path 2
+- story: specific pet type path - birds
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
+  - intent: ask_pet_type
+    entities:
+    - pet_type: birds
+  - action: utter_ask_pet_type_birds
+
+- story: specific pet type path - dogs
+  steps:
+  - intent: ask_pet_type
+    entities:
+    - pet_type: dogs
+  - action: utter_ask_pet_type_dogs
+
+- story: specific pet type path - cats
+  steps:
+  - intent: ask_pet_type
+    entities:
+    - pet_type: cats
+  - action: utter_ask_pet_type_cats
+
+- story: specific pet type path - exotic pets
+  steps:
+  - intent: ask_pet_type
+    entities:
+    - pet_type: exotic pets
+  - action: utter_ask_pet_type_exotic
+
+- story: specific pet type path - rodents
+  steps:
+  - intent: ask_pet_type
+    entities:
+    - pet_type: rodents
+  - action: utter_ask_pet_type_rodents
+
+- story: pet price path
+  steps:
+  - intent: ask_pet_price
+  - action: utter_ask_pet_price
+
+- story: goodbye path
+  steps:
+  - intent: goodbye
   - action: utter_goodbye
+
+- story: bot challenge path
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot

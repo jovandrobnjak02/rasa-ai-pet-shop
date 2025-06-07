@@ -1,6 +1,28 @@
 version: "3.1"
 
 nlu:
+- lookup: pet_type
+  examples: |
+    - fish
+    - birds
+    - dogs
+    - cats
+    - exotic pets
+    - rodents
+
+- lookup: pet_name
+  examples: |
+    - goldfish
+    - koi fish
+    - ara parrot
+    - canary
+    - labrador retriever
+    - scottish collie
+    - persian cat
+    - african hedgehog
+    - greek tortoise
+    - mini rex rabbit
+
 - intent: greet
   examples: |
     - hey
@@ -29,6 +51,46 @@ nlu:
     - see you around
     - bye bye
     - see you later
+
+- intent: ask_pet_type
+  examples: |
+    - what types of pets do you have?
+    - what kinds of animals do you sell?
+    - do you have any [fish](pet_type)?
+    - what [birds](pet_type) do you have?
+    - show me your [dogs](pet_type)
+    - do you sell [cats](pet_type)?
+    - what [exotic pets](pet_type) are available?
+    - do you have any [rodents](pet_type)?
+    - what animals do you have?
+    - tell me about your pets
+    - what pets are available?
+
+- intent: ask_pet_price
+  examples: |
+    - how much is the [Goldfish](pet_name)?
+    - what's the price of [Ara Parrot](pet_name)?
+    - how much does a [Labrador Retriever](pet_name) cost?
+    - what's the cost of [Persian Cat](pet_name)?
+    - how much for [African Hedgehog](pet_name)?
+    - price of [Koi Fish](pet_name)?
+    - how much is [Scottish Collie](pet_name)?
+    - cost of [Canary](pet_name)?
+    - how much for [Mini Rex Rabbit](pet_name)?
+    - price of [Greek Tortoise](pet_name)?
+
+- intent: ask_pet_details
+  examples: |
+    - tell me about [Goldfish](pet_name)
+    - what can you tell me about [Ara Parrot](pet_name)?
+    - give me details about [Labrador Retriever](pet_name)
+    - information about [Persian Cat](pet_name)
+    - what's special about [African Hedgehog](pet_name)?
+    - tell me more about [Koi Fish](pet_name)
+    - details of [Scottish Collie](pet_name)
+    - what's [Canary](pet_name) like?
+    - tell me about [Mini Rex Rabbit](pet_name)
+    - information on [Greek Tortoise](pet_name)
 
 - intent: affirm
   examples: |
