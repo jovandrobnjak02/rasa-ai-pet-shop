@@ -11,3 +11,61 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Respond to general pet type question
+  steps:
+  - intent: ask_pet_type
+  - action: utter_ask_pet_type
+
+- rule: Respond to price question
+  steps:
+  - intent: ask_pet_price
+  - action: utter_ask_pet_price
+
+- rule: Respond to fish question
+  condition:
+  - slot_was_set:
+    - pet_type: fish
+  steps:
+  - intent: ask_specific_pet_type
+  - action: utter_ask_pet_type_fish
+
+- rule: Respond to birds question
+  condition:
+  - slot_was_set:
+    - pet_type: birds
+  steps:
+  - intent: ask_specific_pet_type
+  - action: utter_ask_pet_type_birds
+
+- rule: Respond to dogs question
+  condition:
+  - slot_was_set:
+    - pet_type: dogs
+  steps:
+  - intent: ask_specific_pet_type
+  - action: utter_ask_pet_type_dogs
+
+- rule: Respond to cats question
+  condition:
+  - slot_was_set:
+    - pet_type: cats
+  steps:
+  - intent: ask_specific_pet_type
+  - action: utter_ask_pet_type_cats
+
+- rule: Respond to exotic pets question
+  condition:
+  - slot_was_set:
+    - pet_type: exotic pets
+  steps:
+  - intent: ask_specific_pet_type
+  - action: utter_ask_pet_type_exotic
+
+- rule: Respond to rodents question
+  condition:
+  - slot_was_set:
+    - pet_type: rodents
+  steps:
+  - intent: ask_specific_pet_type
+  - action: utter_ask_pet_type_rodents

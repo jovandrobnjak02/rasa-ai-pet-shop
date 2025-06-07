@@ -2,54 +2,54 @@ version: "3.1"
 
 stories:
 
-- story: pet type path
+- story: ask about pet types
   steps:
   - intent: ask_pet_type
   - action: utter_ask_pet_type
 
-- story: specific pet type path - fish
+- story: ask about fish
   steps:
-  - intent: ask_pet_type
+  - intent: ask_specific_pet_type
     entities:
     - pet_type: fish
   - action: utter_ask_pet_type_fish
 
-- story: specific pet type path - birds
+- story: ask about birds
   steps:
-  - intent: ask_pet_type
+  - intent: ask_specific_pet_type
     entities:
     - pet_type: birds
   - action: utter_ask_pet_type_birds
 
-- story: specific pet type path - dogs
+- story: ask about dogs
   steps:
-  - intent: ask_pet_type
+  - intent: ask_specific_pet_type
     entities:
     - pet_type: dogs
   - action: utter_ask_pet_type_dogs
 
-- story: specific pet type path - cats
+- story: ask about cats
   steps:
-  - intent: ask_pet_type
+  - intent: ask_specific_pet_type
     entities:
     - pet_type: cats
   - action: utter_ask_pet_type_cats
 
-- story: specific pet type path - exotic pets
+- story: ask about exotic pets
   steps:
-  - intent: ask_pet_type
+  - intent: ask_specific_pet_type
     entities:
     - pet_type: exotic pets
   - action: utter_ask_pet_type_exotic
 
-- story: specific pet type path - rodents
+- story: ask about rodents
   steps:
-  - intent: ask_pet_type
+  - intent: ask_specific_pet_type
     entities:
     - pet_type: rodents
   - action: utter_ask_pet_type_rodents
 
-- story: pet price path
+- story: ask about prices
   steps:
   - intent: ask_pet_price
   - action: utter_ask_pet_price
@@ -59,7 +59,7 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
-- story: bot challenge path
+- story: bot challenge
   steps:
   - intent: bot_challenge
   - action: utter_iamabot

@@ -34,17 +34,12 @@ This is a pet shop application built with Angular and integrated with a Rasa AI 
    rasa --version
    ```
 
-4. Initialize a new Rasa project:
-   ```
-   rasa init --no-prompt
-   ```
-
-5. Train the Rasa model:
+4. Train the Rasa model:
    ```
    rasa train
    ```
 
-6. Run the Rasa server:
+5. Run the Rasa server:
    ```
    rasa run --enable-api --cors "*" --port 5005
    ```

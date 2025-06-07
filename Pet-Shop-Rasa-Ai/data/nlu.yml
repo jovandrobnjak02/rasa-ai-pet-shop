@@ -4,11 +4,17 @@ nlu:
 - lookup: pet_type
   examples: |
     - fish
+    - fishes
     - birds
+    - bird
     - dogs
+    - dog
     - cats
+    - cat
     - exotic pets
+    - exotic pet
     - rodents
+    - rodent
 
 - lookup: pet_name
   examples: |
@@ -56,15 +62,59 @@ nlu:
   examples: |
     - what types of pets do you have?
     - what kinds of animals do you sell?
-    - do you have any [fish](pet_type)?
-    - what [birds](pet_type) do you have?
-    - show me your [dogs](pet_type)
-    - do you sell [cats](pet_type)?
-    - what [exotic pets](pet_type) are available?
-    - do you have any [rodents](pet_type)?
     - what animals do you have?
     - tell me about your pets
     - what pets are available?
+    - what do you have?
+    - what can I buy?
+    - what animals do you sell?
+    - what do you sell?
+    - what pets do you sell?
+
+- intent: ask_specific_pet_type
+  examples: |
+    - what [fish](pet_type) do you have?
+    - what [dogs](pet_type) do you have?
+    - what [birds](pet_type) do you have?
+    - what [cats](pet_type) do you have?
+    - what [exotic pets](pet_type) do you have?
+    - what [rodents](pet_type) do you have?
+    - show me your [fish](pet_type)
+    - show me your [dogs](pet_type)
+    - show me your [birds](pet_type)
+    - show me your [cats](pet_type)
+    - show me your [exotic pets](pet_type)
+    - show me your [rodents](pet_type)
+    - do you have any [fish](pet_type)?
+    - do you have any [dogs](pet_type)?
+    - do you have any [birds](pet_type)?
+    - do you have any [cats](pet_type)?
+    - do you have any [exotic pets](pet_type)?
+    - do you have any [rodents](pet_type)?
+    - tell me about your [fish](pet_type)
+    - tell me about your [dogs](pet_type)
+    - tell me about your [birds](pet_type)
+    - tell me about your [cats](pet_type)
+    - tell me about your [exotic pets](pet_type)
+    - tell me about your [rodents](pet_type)
+    - what [fish](pet_type) are available?
+    - what [dogs](pet_type) are available?
+    - what [birds](pet_type) are available?
+    - what [cats](pet_type) are available?
+    - what [exotic pets](pet_type) are available?
+    - what [rodents](pet_type) are available?
+    - show me the [fish](pet_type)
+    - show me the [dogs](pet_type)
+    - show me the [birds](pet_type)
+    - show me the [cats](pet_type)
+    - show me the [exotic pets](pet_type)
+    - show me the [rodents](pet_type)
+    - list your [fish](pet_type)
+    - list your [dogs](pet_type)
+    - list your [birds](pet_type)
+    - list your [cats](pet_type)
+    - list your [exotic pets](pet_type)
+    - list your [rodents](pet_type)
 
 - intent: ask_pet_price
   examples: |
@@ -78,6 +128,11 @@ nlu:
     - cost of [Canary](pet_name)?
     - how much for [Mini Rex Rabbit](pet_name)?
     - price of [Greek Tortoise](pet_name)?
+    - how much do your pets cost?
+    - what are your prices?
+    - show me your prices
+    - tell me the prices
+    - list your prices
 
 - intent: ask_pet_details
   examples: |
