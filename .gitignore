@@ -19,8 +19,8 @@ yarn.lock
 /tmp
 /out-tsc
 /bazel-out
-/.angular/cache
-/.angular
+Pet-Shop/.angular/cache
+Pet-Shop/.angular/
 /coverage
 /.sass-cache
 /connect.lock
