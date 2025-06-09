@@ -68,7 +68,7 @@ htmlcov/
 
 # Rasa
 .rasa/
-models/
+Pet-Shop-Rasa-Ai/models/
 venv/
 results/
 logs/
